@@ -2,17 +2,14 @@
 
 function filterEvenNumbers(arr: number[]): number[]{
     const new_arr: number[] = [];
-    for(let i=0; i<arr.length; i++){
-        const value = arr[i];
-        if( value !== undefined && value % 2 === 0){
-            new_arr.push(value);
+
+    arr.forEach( (x) =>{
+        if( x % 2 === 0){
+            new_arr.push(x);
         }
-    }
+    })
     return new_arr;
 }
-
-const x:number[] = filterEvenNumbers([1, 2, 3, 4, 5, 6]);
-console.log(x);
 
 
 
@@ -21,7 +18,7 @@ console.log(x);
 
 // Problem 2: 
 
-function reverseString(str: string){
+function reverseString(str: string): string{
     const n: number = str.length - 1;
     let new_str: string = "";
     for(let i=n; i>=0; i--){
@@ -31,10 +28,6 @@ function reverseString(str: string){
 }
 
 
-const ans1: string = reverseString("typescript");
-console.log(ans1);
-
-
 
 
 
@@ -42,19 +35,14 @@ console.log(ans1);
 // Problem 3: 
 
 
-function checkType(StringOrNumber: string | number):string{
-  if(typeof(StringOrNumber) === "string"){
+function checkType(value: string | number):string{
+  if(typeof(value) === "string"){
     return "String";
   }else{
     return "Number";
   }
 }
 
-let output1: string = checkType("Hello");
-let output2: string = checkType(42);
-
-console.log(output1);
-console.log(output2);
 
 
 
@@ -67,9 +55,8 @@ function getProperty<T, K extends keyof T>(obj:T,key:K):T[K]{
     
 }
 
-const user = {id: 1, name: "John Doe", age: 21};
-const ans2 = getProperty(user, "name");
-console.log(ans2);
+
+
 
 
 
@@ -82,8 +69,9 @@ interface Book {
     publishedYear : number;
 }
 
+type BookWithRead = Book & {isRead: boolean};
 
-function toggleReadStatus(book:Book){
+function toggleReadStatus(book:Book): BookWithRead{
     const obj = {
         ...book,
         isRead: true,
@@ -92,8 +80,7 @@ function toggleReadStatus(book:Book){
 }
 
 
-const myBook = { title: "TypeScript Guide", author: "Jane Doe", publishedYear: 2024 };
-console.log(toggleReadStatus(myBook));
+
 
 
 
@@ -107,7 +94,7 @@ class Person {
         this.name = name;
         this.age = age;
     }
-};
+}
 
 class Student extends Person {
     grade: string;
@@ -124,8 +111,7 @@ class Student extends Person {
 }
 
 
-const student = new Student("Alice", 20, "A");
-console.log(student.getDetails());
+
 
 
 
@@ -144,8 +130,8 @@ function getIntersection(a1: number[], a2: number[]):number[]{
 }
 
 
-let ans3 = getIntersection([1, 2, 3, 4, 5], [3, 4, 5, 6, 7]);
-console.log(ans3);
+
+
 
 
 
