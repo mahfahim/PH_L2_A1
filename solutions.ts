@@ -34,9 +34,10 @@ function reverseString(str: string): string{
 
 // Problem 3: 
 
+type StringOrNumber = string | number;
 
-function checkType(value: string | number):string{
-  if(typeof(value) === "string"){
+function checkType(value: StringOrNumber):string{
+  if(typeof value === "string"){
     return "String";
   }else{
     return "Number";
@@ -121,7 +122,9 @@ class Student extends Person {
 function getIntersection(a1: number[], a2: number[]):number[]{
     const new_arr: number[] = [];
     a1.forEach( (x) => {
-        if(a2.includes(x)){
+        const exist_a2: boolean = a2.includes(x);
+        const exist_new_arr: boolean = new_arr.includes(x);
+        if(exist_a2 && !exist_new_arr){
             new_arr.push(x);
         }
     });
