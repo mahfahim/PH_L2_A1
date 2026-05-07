@@ -7,7 +7,7 @@ function filterEvenNumbers(arr: number[]): number[]{
         if( x % 2 === 0){
             new_arr.push(x);
         }
-    })
+    });
     return new_arr;
 }
 
