@@ -11,7 +11,7 @@ function filterEvenNumbers(arr: number[]): number[]{
     return new_arr;
 }
 
-
+filterEvenNumbers([1, 2, 3, 4, 5, 6]);
 
 
 
@@ -27,7 +27,7 @@ function reverseString(str: string): string{
     return new_str;
 }
 
-
+reverseString("typescript");
 
 
 
@@ -44,7 +44,8 @@ function checkType(value: StringOrNumber):string{
   }
 }
 
-
+checkType("hello");
+checkType(42);
 
 
 
@@ -56,7 +57,8 @@ function getProperty<T, K extends keyof T>(obj:T,key:K):T[K]{
     
 }
 
-
+const user = { id: 1, name: "John Doe", age: 21 };
+getProperty(user, "name");
 
 
 
@@ -80,7 +82,8 @@ function toggleReadStatus(book:Book): BookWithRead{
     return obj ; 
 }
 
-
+const myBook = { title: "TypeScript Guide", author: "Jane Doe", publishedYear: 2024 };
+toggleReadStatus(myBook);
 
 
 
@@ -112,7 +115,8 @@ class Student extends Person {
 }
 
 
-
+const student = new Student("Alice", 20, "A");
+student.getDetails();
 
 
 
@@ -133,7 +137,7 @@ function getIntersection(a1: number[], a2: number[]):number[]{
 }
 
 
-
+getIntersection([1, 2, 3, 4, 5], [3, 4, 5, 6, 7])
 
 
 
